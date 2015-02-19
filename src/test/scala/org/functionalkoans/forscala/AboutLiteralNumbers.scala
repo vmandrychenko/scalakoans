@@ -12,13 +12,13 @@ class AboutLiteralNumbers extends KoanSuite with ShouldMatchers {
     val f = -2
     val g = -31
     val h = -0x30F
-    a should be(__)
-    b should be(__)
-    c should be(__) //Hint: 30F = 783
-    e should be(__)
-    f should be(__)
-    g should be(__)
-    h should be(__) //Hint: 30F = 783
+    a should be(2)
+    b should be(31)
+    c should be(783) //Hint: 30F = 783
+    e should be(0)
+    f should be(-2)
+    g should be(-31)
+    h should be(-783) //Hint: 30F = 783
   }
 
   koan("""Long Literals are 64 bit, are specified by appending an L or l at the end;
@@ -31,13 +31,13 @@ class AboutLiteralNumbers extends KoanSuite with ShouldMatchers {
     val g = -31L
     val h = -0x30FL
 
-    a should be(__)
-    b should be(__)
-    c should be(__) //Hint: 30F = 783
-    e should be(__)
-    f should be(__)
-    g should be(__)
-    h should be(__) //Hint: 30F = 783
+    a should be(2L)
+    b should be(31L)
+    c should be(783L) //Hint: 30F = 783
+    e should be(0L)
+    f should be(-2L)
+    g should be(-31L)
+    h should be(-783L) //Hint: 30F = 783
   }
 
   koan("""Float and Double Literals are IEEE 754 for specific,
