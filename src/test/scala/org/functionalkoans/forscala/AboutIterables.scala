@@ -11,33 +11,33 @@ class AboutIterables extends KoanSuite with ShouldMatchers {
     val list = List(3, 5, 9, 11, 15, 19, 21)
     val it = list.iterator
     if (it.hasNext) {
-      it.next should be(__)
+      it.next should be(3)
     }
   }
 
   koan( """`grouped` will return an fixed sized Iterable chucks of an Iterable""") {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it = list grouped 3
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
+    it.next() should be(List(3, 5, 9))
+    it.next() should be(List(11, 15, 19))
+    it.next() should be(List(21, 24, 32))
   }
 
   koan( """`sliding` will return an Iterable that shows a sliding window of an Iterable.""") {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it = list sliding 3
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
+    it.next() should be(List(3, 5, 9))
+    it.next() should be(List(5, 9, 11))
+    it.next() should be(List(9, 11, 15))
   }
 
   koan( """`sliding` can take the size of the window as well the size of the step during each
           | iteration""") {
     val list = List(3, 5, 9, 11, 15, 19, 21, 24, 32)
     val it = list sliding(3, 3)
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
-    it.next() should be(List(__, __, __))
+    it.next() should be(List(3, 5, 9))
+    it.next() should be(List(11, 15, 19))
+    it.next() should be(List(21, 24, 32))
   }
 
   koan( """`takeRight` is the opposite of 'take' in Traversable.  It retrieves the last elements
