@@ -9,33 +9,33 @@ class AboutLiteralStrings extends KoanSuite with ShouldMatchers {
     val a = 'a'
     val b = 'B'
 
-    a.toString should be(__)
-    b.toString should be(__)
+    a.toString should be("a")
+    b.toString should be("B")
   }
 
   koan("Character Literals can use hexadecimal Unicode") {
     val c = '\u0061' //unicode for a
 
-    c.toString should be(__)
+    c.toString should be("a")
   }
 
   koan("Character Literals can use octal as well") {
     val d = '\141' //octal for a
 
-    d.toString should be(__)
+    d.toString should be("a")
   }
 
   koan("Character Literals can use escape sequences") {
     val e = '\"'
     val f = '\\'
 
-    e.toString should be(__)
-    f.toString should be(__)
+    e.toString should be("\"")
+    f.toString should be("\\")
   }
 
   koan("One-Line String Literals are surrounded by quotation marks.") {
     val a = "To be or not to be"
-    a should be(__)
+    a should be("To be or not to be")
   }
 
   koan("String Literals can contain escape sequences.") {
