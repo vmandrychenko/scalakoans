@@ -40,7 +40,7 @@ class AboutLiteralStrings extends KoanSuite with ShouldMatchers {
 
   koan("String Literals can contain escape sequences.") {
     val a = "An \141pple \141 d\141y keeps the doctor \141w\141y"
-    a should be(__)
+    a should be("An apple a day keeps the doctor away")
   }
 
   koan("""Multiline String literals
@@ -48,7 +48,7 @@ class AboutLiteralStrings extends KoanSuite with ShouldMatchers {
 	by three quotation marks""") {
     val a = """An apple a day
     keeps the doctor away"""
-    a.split('\n').size should be(__) //a.split('\n').size determines the number of lines
+    a.split('\n').size should be(2) //a.split('\n').size determines the number of lines
   }
 
   koan("Use stripMargin to prettify multi-line strings") {
@@ -60,7 +60,7 @@ class AboutLiteralStrings extends KoanSuite with ShouldMatchers {
 
     val a = """An apple a day
                |keeps the doctor away"""
-    a.stripMargin.split('\n')(1).charAt(0) should be(__)
+    a.stripMargin.split('\n')(1).charAt(0) should be('k')
 
    /*
 	  * a.stripMargin.split('\n')(1).charAt(0)
