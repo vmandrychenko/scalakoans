@@ -1,7 +1,4 @@
-def getFromList(list: List[String], index: Int) = {
-  list(index)
-}
+null.asInstanceOf[Option[String]]
 
-val list = List("A", "B", "C")
-
-getFromList(list)
+val x = Option(null)
+x
